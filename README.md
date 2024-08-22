@@ -17,7 +17,7 @@ To train the CycleGAN model, run the script ```MRI_CycleGAN.py```.
 The DCGAN model is trained for the 3T and 1.5T image synthesis separately. As such, there is a provided code for each field strength.  
 
 To train the DCGAN model for the 3T images, run the ```DCGAN_3T.py``` script.  
-To train the DCGAN model for 1.5T, run the script ```DCGAN_1.5T.py```.
+To train the DCGAN model for 1.5T, run the script ```DCGAN_15T.py```.
 
 ## Generating Results
 After running the above experiments, the results will be saved in the following folders:  
