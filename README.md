@@ -1,6 +1,8 @@
 # Generative Adversarial Networks for Neuroimage Translation
 
-This code implements the CycleGAN and DCGAN models from "Generative Adversarial Networks for Neuroimage Translation" that was presented at PRHA 2023. These results were submitted to the Journal of Computational Biology. 
+This code implements the CycleGAN and DCGAN models from "Generative Adversarial Networks for Neuroimage Translation" that was presented at PRHA 2023. These results were submitted to the Journal of Computational Biology.
+
+Preliminary results of this project are published at <https://arxiv.org/abs/2401.00023>.
 
 ## Setup
 All requirements that are needed to run the code can be found in the requirements.txt file. To run the code with GPU, ensure that the CUDA version is compatible with the libraries. 
