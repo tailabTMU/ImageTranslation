@@ -3,10 +3,6 @@
 # Implementation of a CycleGAN Model for MRI Image Translation
 """
 
-# pip install nibabel pydicom medpy
-# pip install git+https://www.github.com/keras-team/keras-contrib.git
-# pip install visualkeras
-
 # Import Packages
 import os
 from os import listdir
@@ -57,7 +53,7 @@ import math
 from matplotlib import pyplot as plt
 import visualkeras
 
-# Load Data"""
+# Load Data
 
 ff = glob.glob('./data/MRI/*.nii.gz')
 
@@ -100,12 +96,10 @@ images = (images - mi) / (m - mi)
 np.min(images), np.max(images)
 
 # Split Data - Dataset A, 3.0T
-
 from sklearn.model_selection import train_test_split
 trainA, testA, train_ground, test_ground = train_test_split(images, images, test_size=0.3, random_state=1)
 
 # Data Exploration
-
 print("Dataset (images) shape: {shape}".format(shape=images.shape))
 
 plt.figure(figsize=[5,5])
@@ -298,7 +292,7 @@ def summarize_performance(epoch, g_model, d_model, dataset, latent_dim, n_sample
   g_model.save(filename)
 
 # Train the composite model
-def train(g_model, d_model, gan_model, dataset, latent_dim, n_epochs=60, n_batch=2):
+def train(g_model, d_model, gan_model, dataset, latent_dim, n_epochs=50, n_batch=4):
   bat_per_epo = int(dataset.shape[0] / n_batch)
   half_batch = int(n_batch / 2)
   # manually enumerate epochs
@@ -340,7 +334,7 @@ train(g_model, d_model, gan_model, dataset, latent_dim)
 
 # Use Final DCGAN Generator
 
-# example of loading the generator model and generating images
+# loading the generator model and generating images
 from keras.models import load_model
 from numpy.random import randn
 from matplotlib import pyplot
@@ -363,7 +357,6 @@ def save_plot(examples, n):
     pyplot.axis('off')
     # plot raw pixel data
     pyplot.imshow(examples[i,:,:], cmap='gray')
-    # pyplot.imshow(examples[i, :, :, 0], cmap='gray')
   pyplot.show()
 
 # load model
